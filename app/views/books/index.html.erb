@@ -1,14 +1,22 @@
 <header><h1>Books</h1></header>
 <body>
-<table style="border:none;">
+  <% @books.each do |book| %>
+  
+  
+  <table style="border:none;">
   <tbody style="border:none;">
     <tr style="border:none;">
       <td style="border:none;">Title</td>
-      <td style="border:none;">Body</td>
-      <% @books.each do |book| %>
+      <td style="border:none;">Body</td></td>
+    </tr>
+    <tr style="border:none;">
+      <!-- @を外してみた　--
+      <td style="border:none;"><%= book.title %></td></td>
+      <td style="border:none;"><%= book.body %></td>
     </tr>
   </tbody>
 </table>
+  
 <% end %>
 <!-- 入力フォーム -->
 <h3>New Book</h3>
