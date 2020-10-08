@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+ #後から記述
+  def top
+  end
+ #ここまで 
   def index
     @books = Book.all
   end
