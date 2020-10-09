@@ -1,7 +1,10 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 <header><h1>Books</h1></header>
 <body>
- 
-  
+
+
   <table style="border:none;">
   <tbody style="border:none;">
     <tr style="border:none;">
@@ -19,12 +22,16 @@
     <% end %>
   </tbody>
 </table>
-  
+
 
 <!-- 入力フォーム -->
 <h3>New Book</h3>
 <!-- form_with部分 -->
 <%= form_with model:@book, local:true do |f| %>
+<!-- ここから　-->
+
+<!-- 10/9 -->
+
 
   <p>Title</p>
   <%= f.text_field :title %>

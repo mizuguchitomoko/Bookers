@@ -2,7 +2,7 @@ class BooksController < ApplicationController
  #後から記述
   def top
   end
- #ここまで 
+ #ここまで
   def index
     @books = Book.all
   end
@@ -19,19 +19,34 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new(book_params)
-    book.save
+  if book.save
+    flash[:notice] = "book was successfully created."
     redirect_to book_path(book.id)
+  else
+    render action: :new
   end
-  
+end
+
+ def destroy
+    book = Book.find(params[:id])
+   if book.destroy
+    flash[:notice] = "Book was successfully destroyed."
+    redirect_to books_path
+  else
+    render action: :new
+  end
+end
+
   def edit
     @book = Book.find(params[:id])
   end
 
-  def destroy
-    book = Book.find(params[:id])
-    book.destroy
-    redirect_to books_path
-  end
+
+ def update
+   book = Book.find(params[:id])
+   book.update(book_params)
+   redirect_to book_path(book)
+ end
 
    private
   def book_params
