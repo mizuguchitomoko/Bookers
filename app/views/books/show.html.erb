@@ -6,7 +6,7 @@
  <p>Body:<%= @book.body %></p>
 
  <!-- Editで編集ページへ -->
- <%= link_to "Edit", edit_book_path(@book) %>
+ <%= link_to "Edit", edit_book_path(@book.id) %>
  <!-- Backでindexへ戻る -->
       <%= link_to "Back", books_path %>
 </main>

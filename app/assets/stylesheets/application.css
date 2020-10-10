@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ *{
+   margin:10px;
+ }
+.erro{
+  color:red;
+}
+.text-box{
+  margin:40px;
+}
